@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Early Coffee</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      :root
+      {
+        --textcolor:#45ad7f;
+        --maincolor:#472c2c;
+        --othercolor:#e6e8d8;
+      }
+      
+      
+        body ,h1
+        {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .landing
+        {
+            background-image: url('../media/pexels-pixabay-266755.jpg');
+            height: 140vh;
+            background-position: center;
+            background-size: cover;
+            color: var(--maincolor);
+        }
+        header
+        {
+          display: flex;
+          padding: 1.2em;
+          padding-left: 1.4em;
+        }
+       #logo
+       {
+        flex: 3;
+       }
+       header>a
+       {
+        text-decoration: none;
+        font-size: 2.1em;
+        font-family: fantasy;
+        color: var(--maincolor);
+       }
+       nav
+       {
+        display: flex;
+        flex: 2;
+       }
+       nav a
+       {
+        text-decoration: none;
+        font-size: 1.2em;
+        flex: 1;
+        width: fit-content;
+        color: var(--maincolor);
+        transition: all .5s ease;
+        align-items: center;
+        
+       }
+       nav a:hover
+       {
+        transform: translateY(-6px);
+       }
+       .maintext
+       {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 100px;
+        height: 40vh;
+
+       }
+       .maintext div
+       {
+        margin-top: 1.2em;
+       }
+       .line1
+       {
+        font-size: 1.4em;
+        letter-spacing: 0.1em;
+        color: var(--maincolor);
+        font-weight: 700;
+        text-shadow: 2px 2px 3px rgb(231, 200, 60);
+       }
+       .line2
+       {
+        color: var(--maincolor);
+        font-size: 1em;
+        font-weight: 550;
+        font-style: italic;
+       }
+       .line3
+       {
+        color: var(--maincolor);
+        
+       }
+       .line3 span:hover
+       {
+        text-decoration: underline;
+        cursor: pointer;
+       }
+       .button
+       {
+        max-width: 18vh;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 1.1em;
+        color: var(--othercolor);
+        font-weight: 400;
+        border: 1px solid var(--textcolor);
+        background-color: var(--textcolor);
+       }
+       .button:hover
+       {
+        background-color: var(--maincolor);
+       }
+       .menu
+       {
+        position: absolute;
+        background-image: linear-gradient(#33312f, #2e2626 );
+        color: var(--othercolor);
+        width: 100%;
+        
+        border-radius: 10px;
+       }
+       h1
+       {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        font-size: 2em;
+        letter-spacing: 0.2em;
+       }
+       .table
+       {
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        width: 100%;
+        padding-left: 100px;
+        margin-top: 5vh;
+       }
+       .table th
+       {
+        font-size: 1.6em;
+        color: hsl(30, 93%, 49%);
+        margin-bottom: 0.7em;
+       }
+       .table tr
+       {
+        display: flex;
+        margin-top:0.4em;
+        justify-content: center;
+       }
+       .table td:nth-child(1)
+       {
+        justify-self: left;
+        flex: 1;
+       }
+       .table td:nth-child(2)
+       {
+        justify-self: right;
+       }
+       .line
+       {
+        display: flex;
+        max-width: 65%;
+        opacity: 0.6;
+        justify-content: center;
+        margin-top: 50px;
+        margin-left: 200px;
+        height: 0.1em;
+       background-color:  hsl(30, 93%, 49%);
+        
+       }
+       .locations
+       {
+        margin-left: 10vh;
+       }
+       .address
+       {
+        line-height: 1.2em;
+        color:hsl(30, 93%, 49%) ;
+        padding: 15px;
+       }
+       .social-menu ul
+       {
+          position: absolute;
+          top: 120%;
+          left: 50%;
+          padding: 0;
+          margin: 0;
+          transform: translate(-50%, -50%);
+          display: flex;
+}
+
+.social-menu ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+
+.social-menu ul li .fab{
+    font-size: 30px;
+    line-height: 30px;
+    transition: .3s;
+    color: var(--maincolor);
+}
+
+.social-menu ul li .fab:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.social-menu ul li a{
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    transition: .6s;
+    box-shadow: 3px 3px 4px rgba(0,0,0,.5);
+}
+
+.social-menu ul li a:hover{
+    transform: translate(0, -10%);
+}
+
+.social-menu ul li:nth-child(1) a:hover{
+    background-color: rgb(12, 12, 12);
+}
+.social-menu ul li:nth-child(2) a:hover{
+    background-color: #E4405F;
+}
+.social-menu ul li:nth-child(3) a:hover{
+    background-color: #0077b5;
+}
+.social-menu ul li:nth-child(4) a:hover{
+    background-color: #03a1c9;
+}
+.para
+{
+  height: 10vh;
+}
+.para p
+{
+  color: #b31f1f;
+}
+    </style>
+  
+  </head>
+  <body>
+    <div class="landing">
+      <header>
+        <a href="" id="logo">EarlY Coffee</a>
+        <nav>
+            <a href="#menuid"><i class="fab fa-bars"></i>Menu</a>
+            <a href="">Contact</a>
+        </nav>
+      </header>
+
+    <div class="maintext">
+        <div class="line1">Wake up and smell the coffee magic at Early Cofee</div>
+        <div class="line2">Savor the perfect brew, one cup at a time...</div>
+        <div class="line3">Call us <span>1234567890</span></div>
+        <button class="button">Order Now</button>
+    </div>
+</div>
+      <div id="menuid" class="menu">
+      <h1>Menu</h1>
+      
+      <div class="table">
+      <div class="hotcoffee">
+      <table>
+        <th colspan="2">Hot Coffee</th>
+        <tr>
+          <td>Espresso</td>
+          <td>&#x20b9; 098</td>
+        </tr>
+        <tr>
+          <td>Cappucino</td>
+          <td>&#x20b9; 90</td>
+        </tr>
+        <tr>
+          <td>Americano</td>
+          <td>&#x20b9; 188</td>
+        </tr>
+        <tr>
+          <td>Ristretto</td>
+          <td>&#x20b9; 142</td>
+        </tr>
+        <tr>
+          <td>Piccolo Latte</td>
+          <td>&#x20b9; 145</td>
+        </tr>
+        <tr>
+          <td>Mocha</td>
+          <td>&#x20b9; 160</td>
+        </tr>
+        <tr>
+          <td>Macchiato</td>
+          <td> &#x20b9; 120 </td>
+        </tr>
+        <tr>
+          <td>Cafe Con Leche</td>
+          <td>&#x20b9; 170</td>
+        </tr>
+      </table>
+      </div>
+
+      <div class="standards">
+        <table>
+          <th colspan="2">Standards</th>
+          <tr>
+            <td>Espresso</td>
+            <td>&#x20b9; 098</td>
+          </tr>
+          <tr>
+            <td>Cappucino</td>
+            <td>&#x20b9; 90</td>
+          </tr>
+          <tr>
+            <td>Americano</td>
+            <td>&#x20b9; 188</td>
+          </tr>
+          <tr>
+            <td>Ristretto</td>
+            <td>&#x20b9; 142</td>
+          </tr>
+          <tr>
+            <td>Piccolo Latte</td>
+            <td>&#x20b9; 145</td>
+          </tr>
+          <tr>
+            <td>Mocha</td>
+            <td>&#x20b9; 160</td>
+          </tr>
+          <tr>
+            <td>Macchiato</td>
+            <td> &#x20b9; 120 </td>
+          </tr>
+          <tr>
+            <td>Cafe Con Leche</td>
+            <td>&#x20b9; 170</td>
+          </tr>
+        </table>
+        </div>
+
+      <div class="icecoffee">
+      <table>
+        <th colspan="2">Ice Coffee</th>
+        <tr>
+          <td>Espresso</td>
+          <td>&#x20b9; 098</td>
+        </tr>
+        <tr>
+          <td>Cappucino</td>
+          <td>&#x20b9; 90</td>
+        </tr>
+        <tr>
+          <td>Americano</td>
+          <td>&#x20b9; 188</td>
+        </tr>
+        <tr>
+          <td>Ristretto</td>
+          <td>&#x20b9; 142</td>
+        </tr>
+        <tr>
+          <td>Piccolo Latte</td>
+          <td>&#x20b9; 145</td>
+        </tr>
+        <tr>
+          <td>Mocha</td>
+          <td>&#x20b9; 160</td>
+        </tr>
+        <tr>
+          <td>Macchiato</td>
+          <td> &#x20b9; 120 </td>
+        </tr>
+        <tr>
+          <td>Cafe Con Leche</td>
+          <td>&#x20b9; 170</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="locations">
+      <h2 class="ecoffee">Early Coffee</h2>
+      <address class="address">
+        80,South street <br>
+        Tambaram, <br>
+        Chennai-6000021, <br>
+        Contact - 1234567879
+      </address>
+  </div>
+ 
+      </div>
+      <div class="social-menu">
+        <ul>
+            <li><a><i class="fab fa-github"></i></i></a></li>
+            <li><a><i class="fab fa-instagram"></i></a></li>
+            <li><a><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a><i class="fab fa-twitter" target="blank"></i></a></li>
+        </ul>
+        
+        <p>Our Social Media platforms</p>
+    </div>
+    <div class="para">
+      <p>@2024EarlyCoffee.com</p>
+    </div>
+     
+      <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
